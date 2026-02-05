@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="mainNEW.css">
+    <link rel="stylesheet" href="music designNEW.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="backs">
+            <div class="beat"></div>
+            <div class="circle"></div>
+            <!-- <img src="img/heart.png" alt="Не удалось загрузить изображение."> -->
+        </div>
+        <div class="content">
+            <div class="sometext">Диночка)))</div>
+            <img class="heart" src="files/Dina.png" alt="Не удалось.">
+            <div class="video-wrap">
+                <video id="visualizer" src="files/audio visualizer.mp4" muted loop></video>
+            </div>
+            <!-- <div class="limiter"></div> -->
+
+            <!-- аудио плеер -->
+            <div id="audio__player">
+                <audio id="audio" src="files/song.mp3"></audio>
+                <div id="audio__player_container">
+                    <button id="manage">
+                        <i class="bi bi-play-fill"></i>
+                        <i hidden class="bi bi-pause-fill"></i>
+                    </button>
+                    <div class="time">
+                        <div id="сurrent__time">00:00</div>
+                        <div id="duration__time">00:00</div>
+                    </div>
+                    <div class="box">
+                        <div class="progress__bar progress-time">
+                            <div class="current__progress"></div>
+                            <div class="thumb"></div>
+                        </div>
+                    </div>
+                    <button id="mute">
+                        <i class="bi bi-volume-mute-fill"></i>
+                    </button>
+                    <button id="repeat">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </button>
+                </div>
+
+                <div id="volume">
+                    <div>Звук</div>
+                    <div class="container">
+                        <div class="progress__bar progress-volume">
+                            <div class="current__progress"></div>
+                            <div class="thumb"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="audio_settings.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

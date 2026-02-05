@@ -1,0 +1,214 @@
+/* Работа с # страницей */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* html, body {height: 100vh;} */
+body {
+    background: rgb(0, 0, 0);
+}
+
+:root {
+    /* шкала отступов */
+    --space-1: clamp(6px, 0.8vw, 10px);
+    --space-2: clamp(10px, 1.2vw, 16px);
+    --space-3: clamp(16px, 2vw, 28px);
+    --space-4: clamp(24px, 3vw, 40px);
+    --space-5: clamp(32px, 4vw, 60px);
+
+    /* размытия и тени тоже делаем резиновыми */
+    /* --blur-normal: clamp(15px, 4vw, 60px); */
+    --blur-big: clamp(30px, 6vw, 80px);
+    --shadow-big: clamp(60px, 10vw, 180px);
+}
+
+/* margin: { | up | right | down | left | } */
+
+
+/* Настройки контейнера */
+body>.container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.backs>.heart {
+    z-index: var(--index);
+
+    animation:
+        heartfall var(--fall-speed) ease-in-out infinite,
+        heartrotation 2s steps(1) infinite;
+}
+
+
+/* Настройки контента */
+.content {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content>.sometext {
+    width: 100%;
+
+    font-size: clamp(2rem, 10vw, 25rem);
+    font-weight: bold;
+    font-family: 'Times New Roman';
+
+    text-shadow: 0 0 var(--space-3) black;
+    -webkit-text-stroke: 1px white;
+
+    text-align: center;
+
+    background: silver;
+    color: black;
+
+    position: relative;
+    z-index: 1;
+}
+
+.content>.heart {
+    height: clamp(240px, 50vw, 60vh);
+    position: relative;
+    z-index: 3;
+
+    animation: heartbeat 5s ease-in-out infinite;
+}
+
+.video-wrap {
+    position: absolute;
+    width: 80%;
+}
+
+.video-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(to bottom,
+            transparent 50%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 1) 63%,
+            rgba(0, 0, 0, 1) 65%,
+            /* центр — самый тёмный */
+            rgba(0, 0, 0, 1) 67%,
+            rgba(0, 0, 0, 0) 80%,
+            transparent 80%);
+}
+
+#visualizer {
+    position: relative;
+
+    width: 100%;
+    z-index: -3;
+}
+
+.backs>.beat {
+    width: 100%;
+    height: clamp(120px, 20vw, 260px);
+
+    position: absolute;
+    bottom: 0;
+
+    background: silver;
+    opacity: .3;
+
+    filter: blur(var(--blur-big));
+    box-shadow: 0 0 var(--shadow-big) white;
+
+    z-index: -2;
+    overflow: hidden;
+
+    animation: baet 2s ease-in-out infinite;
+}
+
+.backs>.circle {
+    position: absolute;
+
+    bottom: 2vh;
+    left: 0%;
+
+    /* height: 40vh; */
+    height: 30vh;
+
+    width: 100%;
+
+    border-radius: 0 0 50% 50%;
+
+    background: black;
+
+    filter: blur(var(--blur-big));
+    box-shadow: 0 0 var(--shadow-big) black;
+
+    z-index: -1;
+}
+
+/* Анимация контента */
+@keyframes heartbeat {
+    0% {
+        filter: drop-shadow(0 0 0.5vh white);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 1vh white);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0.5vh white);
+    }
+}
+
+@keyframes baet {
+    0% {
+        height: 0vh;
+    }
+
+    50% {
+        height: 10vh;
+    }
+
+    100% {
+        height: 0vh;
+    }
+}
+
+/* присваивания своего положения над экраном в зависимости от размера сердца */
+@keyframes heartfall {
+    0% {
+        top: calc(-2% - var(--size));
+    }
+
+    100% {
+        top: calc(102% + var(--size));
+    }
+}
+
+@keyframes heartrotation {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}

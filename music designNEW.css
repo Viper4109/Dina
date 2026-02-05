@@ -1,0 +1,200 @@
+:root {
+    --space-1: clamp(6px, 0.8vw, 10px);
+    --space-2: clamp(10px, 1.2vw, 18px);
+    --space-3: clamp(16px, 2vw, 28px);
+    --space-4: clamp(24px, 3vw, 40px);
+
+    --player-h: clamp(160px, 18vw, 225px);
+    --btn-size: clamp(70px, 10vw, 150px);
+    --icon-size: clamp(40px, 6vw, 100px);
+    --bar-h: clamp(10px, 1.6vw, 20px);
+}
+
+
+#audio__player {
+    width: 50%;
+    height: var(--player-h);
+
+    justify-self: center;
+    border: clamp(4px, 0.8vw, 10px) solid rgb(177, 177, 177);
+    border-radius: clamp(20px, 4vw, 50px);
+
+    margin: var(--space-4) 0;
+    padding: 0 var(--space-3);
+    /* gap: var(--space-3); */
+
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+#audio__player_container {
+    height: 100%;
+    flex: 0 0 80%;
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+
+#audio__player button {
+    background-color: transparent;
+
+    width: var(--btn-size);
+    height: var(--btn-size);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+#audio__player i {
+    font-size: var(--icon-size);
+    color: silver;
+}
+
+#audio__player i {
+    font-size: var(--icon-size);
+    color: silver;
+}
+
+#audio__player_container>.box {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress__bar {
+    width: 100%;
+    height: var(--bar-h);
+    background-color: silver;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress__bar>.current__progress {
+    width: 0%;
+    height: 100%;
+
+    background-color: rgb(45, 45, 144);
+    position: relative;
+    cursor: pointer;
+}
+
+.progress__bar>.thumb {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 200%;
+    background: #fff;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#audio__player_container>.time {
+    color: silver;
+    font-size: clamp(1.6rem, 4vw, 5rem);
+}
+
+#сurrent__time,
+#duration__time {
+    text-align: center;
+    margin: 0 10px;
+}
+
+#volume {
+    flex: 0 0 20%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    padding-left: var(--space-4);
+}
+
+#volume>div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-2) 0;
+}
+
+#volume>div:first-child {
+    color: silver;
+    font-size: clamp(1.6rem, 4vw, 5rem);
+}
+
+#mute,
+#repeat {
+    transition: text-shadow .3s ease, transform .3s ease;
+}
+
+#mute.active,
+#repeat.active {
+    text-shadow:
+        0 0 4px #fff,
+        0 0 20px silver;
+    transform: scale(1.05);
+}
+
+@media (max-width: 3000px) {
+    #audio__player {
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 1400px) {
+    #audio__player {
+        width: 90%;
+
+        flex-wrap: wrap;
+    }
+
+    #audio__player_container {
+        flex: auto;
+        flex-wrap: wrap;
+        gap: 0;
+
+        justify-content: center;
+    }
+
+    #audio__player button,
+    #audio__player_container>.time,
+    #volume {
+        order: 1;
+    }
+
+    .progress__bar {
+        order: 2;
+    }
+
+    #volume {
+        flex: 0 0 30vw;
+        height: 50%;
+        padding: 0;
+        justify-content: start;
+        align-items: center;
+    }
+
+    #volume>div {
+        height: 50%;
+        margin: 0;
+    }
+
+    #audio__player_container>.box {
+        height: 40%;
+    }
+}
