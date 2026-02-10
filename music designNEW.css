@@ -1,27 +1,13 @@
-:root {
-    --space-1: clamp(6px, 0.8vw, 10px);
-    --space-2: clamp(10px, 1.2vw, 18px);
-    --space-3: clamp(16px, 2vw, 28px);
-    --space-4: clamp(24px, 3vw, 40px);
-
-    --player-h: clamp(160px, 18vw, 225px);
-    --btn-size: clamp(70px, 10vw, 150px);
-    --icon-size: clamp(40px, 6vw, 100px);
-    --bar-h: clamp(10px, 1.6vw, 20px);
-}
-
-
 #audio__player {
     width: 50%;
-    height: var(--player-h);
+    /* height: 225px; */
 
     justify-self: center;
-    border: clamp(4px, 0.8vw, 10px) solid rgb(177, 177, 177);
-    border-radius: clamp(20px, 4vw, 50px);
+    border: 0.2vw solid rgb(177, 177, 177);
+    border-radius: 1.4vw;
 
-    margin: var(--space-4) 0;
-    padding: 0 var(--space-3);
-    /* gap: var(--space-3); */
+    /* margin: 0 0; */
+    padding: 0.4vw 0.8vw;
 
     position: relative;
     z-index: 0;
@@ -36,16 +22,15 @@
     height: 100%;
     flex: 0 0 80%;
     display: flex;
-    gap: var(--space-3);
+    gap: 0.4vw;
     align-items: center;
 }
-
 
 #audio__player button {
     background-color: transparent;
 
-    width: var(--btn-size);
-    height: var(--btn-size);
+    width: 2.5vw;
+    height: 2.5vw;
 
     display: flex;
     justify-content: center;
@@ -55,12 +40,7 @@
 }
 
 #audio__player i {
-    font-size: var(--icon-size);
-    color: silver;
-}
-
-#audio__player i {
-    font-size: var(--icon-size);
+    font-size: 1.7vw;
     color: silver;
 }
 
@@ -75,7 +55,7 @@
 
 .progress__bar {
     width: 100%;
-    height: var(--bar-h);
+    height: 0.4vw;
     background-color: silver;
     position: relative;
     cursor: pointer;
@@ -95,8 +75,9 @@
     top: 50%;
     left: 0%;
     transform: translate(-50%, -50%);
-    width: 15px;
     height: 200%;
+    width: 0.35vw;
+    /* height: 40px; */
     background: #fff;
     pointer-events: none;
     cursor: pointer;
@@ -104,7 +85,7 @@
 
 #audio__player_container>.time {
     color: silver;
-    font-size: clamp(1.6rem, 4vw, 5rem);
+    font-size: 1.5vw;
 }
 
 #сurrent__time,
@@ -120,7 +101,7 @@
     flex-wrap: wrap;
     align-content: center;
 
-    padding-left: var(--space-4);
+    padding-left: 0.4vw;
 }
 
 #volume>div {
@@ -128,12 +109,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: var(--space-2) 0;
+    margin: 0.4vw 0px;
 }
 
 #volume>div:first-child {
     color: silver;
-    font-size: clamp(1.6rem, 4vw, 5rem);
+    font-size: 1.5vw;
 }
 
 #mute,
@@ -149,14 +130,15 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 3000px) {
+
+/* медиа для изменения внешней части */
+@media (max-width: 720px) {
     #audio__player {
         width: 70%;
     }
 }
 
-
-@media (max-width: 1400px) {
+@media (max-width: 480px) {
     #audio__player {
         width: 90%;
 
@@ -185,7 +167,7 @@
         flex: 0 0 30vw;
         height: 50%;
         padding: 0;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
     }
 
@@ -195,6 +177,81 @@
     }
 
     #audio__player_container>.box {
-        height: 40%;
+        height: auto;
+        /* margin-top: 10px; */
     }
 }
+
+/* медиа для изменения внешней части */
+
+
+
+/* медиа для подгонки размеров */
+@media (max-width: 0) {
+
+    /* размер плеера */
+    #audio__player {
+        width: 50%;
+        height: auto;
+
+        border: 3px solid rgb(177, 177, 177);
+        border-radius: 15px;
+
+        margin: 0 0;
+        padding: 5px 10px;
+    }
+
+    /* иконки */
+    #audio__player i {
+        font-size: 20px;
+    }
+
+    /* хитбокс кнопок */
+    #audio__player button {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* время */
+    #audio__player_container>.time {
+        font-size: 1.1rem;
+    }
+
+    /* progress__bar */
+    .progress__bar {
+        width: 100%;
+        height: 5px;
+    }
+
+    /* thumb */
+    .progress__bar>.thumb {
+        width: 4px;
+    }
+
+    /* отступы между объектами */
+    #audio__player_container {
+        gap: 5px;
+    }
+
+    /* отступы звука */
+    #volume {
+        padding-left: 5px;
+    }
+
+    #volume>div {
+        margin: 5px 0px;
+    }
+
+    /* размер текста "звук" */
+    #volume>div:first-child {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1080px) {}
+
+@media (max-width: 720px) {}
+
+@media (max-width: 480px) {}
+
+/* медиа для подгонки размеров */
