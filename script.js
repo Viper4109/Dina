@@ -18,10 +18,10 @@ function spawnHeart(size, speed, picture, index) {
 }
 
 const maxHearts = 40
-const sizes = ['clamp(5px, 4vw, 75px)', 
-               'clamp(10px, 5vw, 102px)', 
-               'clamp(20px, 6vw, 128px)', 
-               'clamp(30px, 7vw, 155px)'];
+const sizes = ['1.5vw', 
+               '2vw', 
+               '2.5vw', 
+               '3vw'];
 const fallspeed = ['10s', '8s', '6s', '4s'];
 const imgs = ['files/heart.png', 'files/heart.png', 'files/flower.png'];
 const ind = [1, 2, 4];
