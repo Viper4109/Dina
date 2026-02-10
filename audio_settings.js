@@ -166,13 +166,15 @@ repeatbtn.addEventListener('click', () => {
 attachDrag(timeBar, updateTimeProgress);
 attachDrag(volumeBar, updateVolumeProgress);
 
+
+// это js для media запросов (для разных экранов)
 document.addEventListener('DOMContentLoaded', () => {
 
   const volume = document.getElementById("volume")
   const container = document.getElementById('audio__player_container');
   const player = document.getElementById('audio__player');
 
-  const mq = window.matchMedia('(max-width: 1400px)');
+  const mq = window.matchMedia('(max-width: 480px)');
 
   function moveVolume(e) {
     if (e.matches) {
