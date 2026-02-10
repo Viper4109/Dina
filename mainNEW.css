@@ -15,27 +15,12 @@ body {
     background: rgb(0, 0, 0);
 }
 
-:root {
-    /* шкала отступов */
-    --space-1: clamp(6px, 0.8vw, 10px);
-    --space-2: clamp(10px, 1.2vw, 16px);
-    --space-3: clamp(16px, 2vw, 28px);
-    --space-4: clamp(24px, 3vw, 40px);
-    --space-5: clamp(32px, 4vw, 60px);
-
-    /* размытия и тени тоже делаем резиновыми */
-    /* --blur-normal: clamp(15px, 4vw, 60px); */
-    --blur-big: clamp(30px, 6vw, 80px);
-    --shadow-big: clamp(60px, 10vw, 180px);
-}
-
 /* margin: { | up | right | down | left | } */
-
 
 /* Настройки контейнера */
 body>.container {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -56,8 +41,8 @@ body>.container {
 
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    padding: var(--space-4) 0;
+    gap: 2vh;
+    padding: 2vh 0 4vh 0;
 
     justify-content: space-around;
     align-items: center;
@@ -66,12 +51,12 @@ body>.container {
 .content>.sometext {
     width: 100%;
 
-    font-size: clamp(2rem, 10vw, 25rem);
+    font-size: 7vw;
     font-weight: bold;
     font-family: 'Times New Roman';
 
-    text-shadow: 0 0 var(--space-3) black;
-    -webkit-text-stroke: 1px white;
+    text-shadow: 0 0 1.1vw black;
+    -webkit-text-stroke: 0.05vw white;
 
     text-align: center;
 
@@ -83,7 +68,9 @@ body>.container {
 }
 
 .content>.heart {
-    height: clamp(240px, 50vw, 60vh);
+    width: 50vmin;
+    height: 50vmin;
+    /* min-height: ; */
     position: relative;
     z-index: 3;
 
@@ -121,7 +108,7 @@ body>.container {
 
 .backs>.beat {
     width: 100%;
-    height: clamp(120px, 20vw, 260px);
+    height: 10vh;
 
     position: absolute;
     bottom: 0;
@@ -129,8 +116,8 @@ body>.container {
     background: silver;
     opacity: .3;
 
-    filter: blur(var(--blur-big));
-    box-shadow: 0 0 var(--shadow-big) white;
+    filter: blur(3vh);
+    box-shadow: 0 0 5vh white;
 
     z-index: -2;
     overflow: hidden;
@@ -153,8 +140,8 @@ body>.container {
 
     background: black;
 
-    filter: blur(var(--blur-big));
-    box-shadow: 0 0 var(--shadow-big) black;
+    filter: blur(3vh);
+    box-shadow: 0 0 5vh black;
 
     z-index: -1;
 }
@@ -212,3 +199,9 @@ body>.container {
         transform: rotate(15deg);
     }
 }
+
+
+
+/* @media (max-width: 1200px) {
+
+} */
