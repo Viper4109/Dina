@@ -37,12 +37,12 @@ body>.container {
 /* Настройки контента */
 .content {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
-    gap: 2vh;
-    padding: 2vh 0 4vh 0;
+    gap: 2vmax;
+    padding: 2vmax 0 4vmax 0;
 
     justify-content: space-around;
     align-items: center;
@@ -56,8 +56,8 @@ body>.container {
     font-weight: bold;
     font-family: 'Times New Roman';
 
-    text-shadow: 0 0 1.1vw black;
-    -webkit-text-stroke: 0.05vw white;
+    text-shadow: 0 0 1.1vmax black;
+    -webkit-text-stroke: 0.05vmax white;
 
     text-align: center;
 
@@ -117,8 +117,8 @@ body>.container {
     background: silver;
     opacity: .3;
 
-    filter: blur(3vh);
-    box-shadow: 0 0 5vh white;
+    filter: blur(3vmax);
+    box-shadow: 0 0 5vmax white;
 
     z-index: -2;
     overflow: hidden;
@@ -141,8 +141,8 @@ body>.container {
 
     background: black;
 
-    filter: blur(3vh);
-    box-shadow: 0 0 5vh black;
+    filter: blur(3vmax);
+    box-shadow: 0 0 5vmax black;
 
     z-index: -1;
 }
@@ -150,15 +150,15 @@ body>.container {
 /* Анимация контента */
 @keyframes heartbeat {
     0% {
-        filter: drop-shadow(0 0 0.5vh white);
+        filter: drop-shadow(0 0 0.5vmax white);
     }
 
     50% {
-        filter: drop-shadow(0 0 1vh white);
+        filter: drop-shadow(0 0 1vmax white);
     }
 
     100% {
-        filter: drop-shadow(0 0 0.5vh white);
+        filter: drop-shadow(0 0 0.5vmax white);
     }
 }
 
