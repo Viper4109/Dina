@@ -3,11 +3,11 @@
     /* height: 225px; */
 
     justify-self: center;
-    border: 0.2vw solid rgb(177, 177, 177);
-    border-radius: 1.4vw;
+    border: 0.2vmax solid rgb(177, 177, 177);
+    border-radius: 1.4vmax;
 
     /* margin: 0 0; */
-    padding: 0.4vw 0.8vw;
+    padding: 0.4vmax 0.8vmax;
 
     position: relative;
     z-index: 0;
@@ -22,15 +22,15 @@
     height: 100%;
     flex: 0 0 80%;
     display: flex;
-    gap: 0.4vw;
+    gap: 0.4vmax;
     align-items: center;
 }
 
 #audio__player button {
     background-color: transparent;
 
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 2.5vmax;
+    height: 2.5vmax;
 
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@
 }
 
 #audio__player i {
-    font-size: 1.7vw;
+    font-size: 1.7vmax;
     color: silver;
 }
 
@@ -55,7 +55,7 @@
 
 .progress__bar {
     width: 100%;
-    height: 0.4vw;
+    height: 0.4vmax;
     background-color: silver;
     position: relative;
     cursor: pointer;
@@ -76,7 +76,7 @@
     left: 0%;
     transform: translate(-50%, -50%);
     height: 200%;
-    width: 0.35vw;
+    width: 0.35vmax;
     /* height: 40px; */
     background: #fff;
     pointer-events: none;
@@ -85,13 +85,13 @@
 
 #audio__player_container>.time {
     color: silver;
-    font-size: 1.5vw;
+    font-size: 1.5vmax;
 }
 
 #сurrent__time,
 #duration__time {
     text-align: center;
-    margin: 0 0.8vw;
+    margin: 0 0.8vmax;
 }
 
 #volume {
@@ -101,7 +101,7 @@
     flex-wrap: wrap;
     align-content: center;
 
-    padding-left: 0.4vw;
+    padding-left: 0.4vmax;
 }
 
 #volume>div {
@@ -109,12 +109,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.4vw 0px;
+    margin: 0.4vmax 0px;
 }
 
 #volume>div:first-child {
     color: silver;
-    font-size: 1.5vw;
+    font-size: 1.5vmax;
 }
 
 #mute,
@@ -256,15 +256,15 @@
     
     #audio__player {
         border-top: 0px;
-        border-radius: 0 0 1.4vw 1.4vw;
+        border-radius: 0 0 1.4vmax 1.4vmax;
     }
 
     #audio__player_container {
-        gap: 0.4vw;
+        gap: 0.4vmax;
     }
 
     .progress__bar {
-        margin: 0.7vw 0;
+        margin: 0.7vmax 0;
         /* 5px - 0.4vw */
         /* 2px - 0.16vw */
     }
