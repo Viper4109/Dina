@@ -110,20 +110,43 @@ function updateVolumeProgress(clientX) {
 function attachDrag(bar, updateFn) {
   let dragging = false;
 
+  function getClientX(e) {
+    if (e.touches && e.touches.length > 0) {
+      return e.touches[0].clientX;
+    }
+    return e.clientX;
+  }
+
+  // Клик
   bar.addEventListener('click', (e) => {
-    updateFn(e.clientX);
+    updateFn(getClientX(e));
   });
 
+  // Мышь
   bar.addEventListener('mousedown', (e) => {
     dragging = true;
-    updateFn(e.clientX);
+    updateFn(getClientX(e));
   });
 
   document.addEventListener('mousemove', (e) => {
-    if (dragging) updateFn(e.clientX);
+    if (dragging) updateFn(getClientX(e));
   });
 
   document.addEventListener('mouseup', () => {
+    dragging = false;
+  });
+
+  // Тач
+  bar.addEventListener('touchstart', (e) => {
+    dragging = true;
+    updateFn(getClientX(e));
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    if (dragging) updateFn(getClientX(e));
+  });
+
+  document.addEventListener('touchend', () => {
     dragging = false;
   });
 }
