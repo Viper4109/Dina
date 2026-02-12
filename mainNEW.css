@@ -51,7 +51,8 @@ body>.container {
 .content>.sometext {
     width: 100%;
 
-    font-size: 7vw;
+    font-size: 7vmax;
+
     font-weight: bold;
     font-family: 'Times New Roman';
 
