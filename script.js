@@ -56,3 +56,10 @@ function beat() {
     
     document.getElementsByClassName('beat')[0].appendChild(circle);
 }
+
+const flipbox = document.getElementById('flipbox');
+
+flipbox.addEventListener('click', () => {
+    flipbox.classList.toggle('flipped');
+});
+
