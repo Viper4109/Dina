@@ -68,14 +68,47 @@ body>.container {
     z-index: 1;
 }
 
-.content>.heart {
+#flipbox {
     width: 50vmin;
     height: 50vmin;
-    /* min-height: ; */
+
     position: relative;
     z-index: 3;
 
+    perspective: 1200px;   /* добавляем глубину */
+
     animation: heartbeat 5s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+#flipbox.flipped .flip-inner {
+    transform: rotateY(180deg) scale(1.5);
+}
+
+#heart_front,
+#heart_back {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    backface-visibility: hidden;
+}
+
+/* Задняя сторона повернута */
+#heart_back {
+    transform: rotateY(180deg);
 }
 
 .video-wrap {
